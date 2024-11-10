@@ -2,13 +2,30 @@ function mergesort(array) {
   
   let lo = 0;
   let hi = array.length - 1;
-  if(lo>=hi) {
+  if(lo >= hi) {
     return array;
   }
-  while(lo<hi) {
+  while(lo < hi) {
     let mid = Math.floor((hi+lo)/2);
-    hi = mid;
-  }
+    let a = lo, b = mid + 1;
+    for(let i = lo; i <= hi; i++) {
+    if(a <= mid && (b > hi || array[a] < array[b])) {
+      let tmp = array[a++];
+      array[i] = tmp;
+    } 
+    else {
+      let tmp = array[b++];
+      array[i] = tmp;
+    }
   
+    for(let i = lo; i <= hi; i++) {
+      array[i] = tmp[k];
+    }
+  }
+
+  }
     return array;
 }
+
+array = [3, 1, 2, 4];
+console.log(mergesort(array));
