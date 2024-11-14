@@ -1,6 +1,10 @@
 function mergesort(array) {
+  //iterative - cannot be recursive
+  //in-place - cannot use temp-arrays
+  //starting this sort, we assume we are at the step of all elements are in "single element arrays", which allows us to not need recursion in separating array into temp arrays
+
   
-  let lo = 0;
+  /*let lo = 0;
   let hi = array.length - 1;
   if(lo >= hi) {
     return array;
@@ -23,9 +27,9 @@ function mergesort(array) {
     }
   }
 
-  }
+  }*/
     return array;
 }
 
-array = [3, 1, 2, 4];
-console.log(mergesort(array));
+//array = [3, 1, 2, 4];
+//console.log(mergesort(array));
