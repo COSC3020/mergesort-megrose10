@@ -12,7 +12,7 @@ function mergesort(array) {
       //console.log(i);
       //console.log(mid);
       //console.log(hi);
-      console.log(array);
+      //console.log(array);
     }
     
     counter *= 2;
