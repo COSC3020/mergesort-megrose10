@@ -1,35 +1,45 @@
 function mergesort(array) {
-  //iterative - cannot be recursive
-  //in-place - cannot use temp-arrays
-  //starting this sort, we assume we are at the step of all elements are in "single element arrays", which allows us to not need recursion in separating array into temp arrays
+  let hi = array.length;
+  let mid = 0;
+  let alen = array.length;
+  let counter = 1;
 
-  
-  /*let lo = 0;
-  let hi = array.length - 1;
-  if(lo >= hi) {
-    return array;
-  }
-  while(lo < hi) {
-    let mid = Math.floor((hi+lo)/2);
-    let a = lo, b = mid + 1;
-    for(let i = lo; i <= hi; i++) {
-    if(a <= mid && (b > hi || array[a] < array[b])) {
-      let tmp = array[a++];
-      array[i] = tmp;
-    } 
-    else {
-      let tmp = array[b++];
-      array[i] = tmp;
+  while (alen > counter) {
+    for(i = 0; i < alen; i += 2 * counter) {
+      mid = i + counter;
+      hi = 2 * counter;
+      array = compare(array, i, mid, hi);
+      //console.log(i);
+      //console.log(mid);
+      //console.log(hi);
+      console.log(array);
     }
-  
-    for(let i = lo; i <= hi; i++) {
-      array[i] = tmp[k];
-    }
+    
+    counter *= 2;
   }
-
-  }*/
-    return array;
+  
+  return array;
 }
 
-//array = [3, 1, 2, 4];
+function compare(a, lo, mid, hi) {
+  for(let i = lo; i <= mid; i++) {
+    for(let j = hi; j >= mid; j--) {
+      //console.log(i + "    " + j);
+      if(a[i] > a[j]) {
+        //console.log("ai1 = " + a[i]);
+        let tmp = a[i];
+        a[i] = a[j];
+        //console.log("aj1 = " + a[j]);
+        a[j] = tmp;
+        //console.log("aj2 = " + a[j]);
+        //console.log("ai2 = " + a[i]);
+      }
+    }
+    //console.log(a);
+  }
+  return a;
+}
+
+//let array = [1, 3, 6, 2, 5, 4];
+//compare(array, 0, 3, 5)
 //console.log(mergesort(array));
