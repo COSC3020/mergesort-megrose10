@@ -20,10 +20,10 @@ function mergesort(array) {
             array[j] = tmp;
             //console.log("aj2 = " + a[j]);
             //console.log("ai2 = " + a[i]);
+          }
         }
+        //console.log(a);
       }
-    //console.log(a);
-  }
       //console.log(i);
       //console.log(mid);
       //console.log(hi);
