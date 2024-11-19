@@ -7,7 +7,23 @@ function mergesort(array) {
     for(i = 0; i < alen; i += 2 * counter) {
       mid = i + counter;
       hi = 2 * counter;
-      array = compare(array, i, mid, hi);
+      //array = compare(array, i, mid, hi);
+      /////////////////
+      for(let k = i; k <= mid; k++) {
+        for(let j = hi; j >= mid; j--) {
+        //console.log(i + "    " + j);
+          if(array[k] > array[j]) {
+            //console.log("ai1 = " + a[i]);
+            let tmp = array[k];
+            array[k] = array[j];
+            //console.log("aj1 = " + a[j]);
+            array[j] = tmp;
+            //console.log("aj2 = " + a[j]);
+            //console.log("ai2 = " + a[i]);
+        }
+      }
+    //console.log(a);
+  }
       //console.log(i);
       //console.log(mid);
       //console.log(hi);
@@ -16,25 +32,6 @@ function mergesort(array) {
   }
   
   return array;
-}
-
-function compare(a, lo, mid, hi) {
-  for(let i = lo; i <= mid; i++) {
-    for(let j = hi; j >= mid; j--) {
-      //console.log(i + "    " + j);
-      if(a[i] > a[j]) {
-        //console.log("ai1 = " + a[i]);
-        let tmp = a[i];
-        a[i] = a[j];
-        //console.log("aj1 = " + a[j]);
-        a[j] = tmp;
-        //console.log("aj2 = " + a[j]);
-        //console.log("ai2 = " + a[i]);
-      }
-    }
-    //console.log(a);
-  }
-  return a;
 }
 
 //let array = [1, 3, 6, 2, 5, 4];
