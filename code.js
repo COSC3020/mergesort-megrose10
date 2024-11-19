@@ -2,9 +2,8 @@ function mergesort(array) {
   let hi = array.length;
   let mid = 0;
   let alen = array.length;
-  let counter = 1;
 
-  while (alen > counter) {
+  for(let counter = 1; counter < alen; counter *=2) {
     for(i = 0; i < alen; i += 2 * counter) {
       mid = i + counter;
       hi = 2 * counter;
@@ -14,8 +13,6 @@ function mergesort(array) {
       //console.log(hi);
       //console.log(array);
     }
-    
-    counter *= 2;
   }
   
   return array;
