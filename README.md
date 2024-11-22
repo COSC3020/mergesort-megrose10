@@ -18,4 +18,4 @@ Analyse the time complexity of your implementation and give a $\Theta$ bound for
 its worst-case runtime. Add your answer, including your reasoning, to this
 markdown file.
 
-In my code, I include 4 for loops, which would be $O(n^4)$, this would be the overall worst case since it runs over each element multiple times. So, the worst runtime would be ∈ $Θ(n^4)$.
+In my code, I include 4 for loops, which would be $O(n^4)$, this would be the overall worst case since it runs over each element multiple times. So, the worst runtime would be ∈ $Θ(n^4)$, which is much worse than mergesort recursively and not in place.
